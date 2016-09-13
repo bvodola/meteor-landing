@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Main = ({children}) => (
-	<div className='main-layout'>
+	<div>
 		{children}
 	</div>
 );
