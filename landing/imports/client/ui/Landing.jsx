@@ -1,6 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import React , {Component} from 'react';
 import { Router, Route, browserHistory } from 'react-router'
+import Loading from './layouts/Loading.jsx';
+import Confirmation from './layouts/Confirmation.jsx';
 
 import Page from './containers/Page.jsx';
 import AddPage from './containers/admin/AddPage.jsx';
@@ -28,6 +30,7 @@ const LandingRoutes = (
 			<Route path='add-template' component={AddTemplate} />
 		</Route>
 		<Route path='page'>
+			<Route path='confirmation' component={Confirmation} />
 			<Route path='(:brand/:slug)' component={Landing} />
 		</Route>
 	</Route>

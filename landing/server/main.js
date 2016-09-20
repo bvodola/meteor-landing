@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Pages } from '../imports/models/pages.js';
 import { Templates } from '../imports/models/templates.js';
+import { Leads } from '../imports/models/leads.js';
 
 Meteor.methods({
 	'getTemplateComponent': function(template_id) {
@@ -17,5 +18,9 @@ Meteor.publish('pages', () => {
 })
 
 Meteor.publish('templates', () => {
+	return Templates.find({});
+})
+
+Meteor.publish('leads', () => {
 	return Templates.find({});
 })
