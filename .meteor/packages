@@ -22,4 +22,4 @@ twbs:bootstrap
 fourseven:scss
 fortawesome:fontawesome
 kadira:dochead
-ecmascript
+gadicc:ecmascript-hot@=2.0.0-beta.6
