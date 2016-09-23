@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { Leads } from '../../../../models/leads.js';
 
 // ==========
 // Repeatable
 // ==========
+
 class Repeatable extends Component {
 
 	constructor(props) {
@@ -25,7 +27,10 @@ class Repeatable extends Component {
 		}
 	}
 
+	// This function is responsible for rendering each loop of the
+	// <Repeatable /> component.
 	renderChildren(children, refName) {
+
 		// First we make sure that the refName parameter passed is a String
 		refName = String(refName);
 
@@ -90,6 +95,17 @@ class Helpers {
 			}
 		}
 		return refValues;
+	}
+
+	static submitLead(self,event,refs) {
+		event.preventDefault();
+		let query = this.getRefValues(refs);
+		Leads.insert(query, function(e,id) {
+			if(e) console.log(e);
+			else {
+				self.props.router.push('/landing/page/confirmation');
+			}
+		});
 	}
 	
 	// Receives an array of objects, a key and a value.
